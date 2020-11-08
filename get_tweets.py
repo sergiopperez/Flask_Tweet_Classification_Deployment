@@ -4,16 +4,21 @@ import pandas as pd
 pd.set_option('display.max_colwidth', 1000)
 
 # api key
-api_key = "Enter API Key"
+api_key = 'lhqWY9NHlWFuwBWkbOU9WFDc5'
 # api secret key
-api_secret_key = "Enter API Secret Key"
+api_secret_key = 'uzGHovWoDDUg7ggV8L9NlPkblBKJm5oUMYAa8tCZuBWDUhLHUX'
 # access token
-access_token = "Enter Access Token"
+access_token = "418212816-p5yjvQtqTgaPghy9k7kPSR92wmTEEMaxXNs8qvGr"
 # access token secret
-access_token_secret = "Enter Access Token Secret"
+access_token_secret = "l93ibmFrNT3wFhTEUVRErWOMeyddrHqDxK376igJ40p0r"
 
+# authorize the API Key
 authentication = tweepy.OAuthHandler(api_key, api_secret_key)
+
+# authorization to user's access token and access token secret
 authentication.set_access_token(access_token, access_token_secret)
+
+# call the api
 api = tweepy.API(authentication, wait_on_rate_limit=True)
 
 def get_related_tweets(text_query):
